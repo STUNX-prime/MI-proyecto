@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mis Exámenes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eaf4fc;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #034f84;
+      text-align: center;
+    }
+
+    .exam-box {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 20px auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 1px solid #d4e6f1;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #b3d9ff;
+      color: #034f84;
+    }
+
+    tr:hover {
+      background-color: #e0f0ff;
+      cursor: pointer;
+    }
+
+    .note {
+      text-align: center;
+      font-style: italic;
+      margin-top: 10px;
+      color: #555;
+    }
+    .back-button {
+      display: block;
+      width: fit-content;
+      margin: 25px auto 0 auto;
+      padding: 10px 20px;
+      background-color: #a3e1ff;
+      color: #034f84;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #7ccfff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>📘 Mis Exámenes</h1>
+
+  <div class="exam-box">
+    <table id="examTable">
+      <thead>
+        <tr>
+          <th># Examen</th>
+          <th>Nombre del Examen</th>
+          <th>Calificación</th>
+          <th>Fecha de Realización</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ondblclick="abrirResultados()">
+          <td>1</td>
+          <td>Matemáticas Básicas</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr ondblclick="abrirResultados()">
+          <td>2</td>
+          <td>Algebra</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr ondblclick="abrirResultados()">
+          <td>3</td>
+          <td>Multiplicacion</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+     <a href="estudiantes.html" class="back-button">⬅️ Volver a estudiantes</a>
+    <p class="note">Haz <strong>doble clic</strong> sobre cualquier examen para ver el informe detallado.</p>
+  </div>
+
+   <script src="scripexamen.js"></script>
+</body>
+</html>

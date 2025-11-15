@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz de Límites</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <h1>Quiz de Límites</h1>
+
+  <form id="quizForm">
+
+    <div class="question">
+      <h3>1. ¿Cuál es el límite de f(x) = 2x cuando x → 3?</h3>
+      <label><input type="radio" name="q1" value="6"> 6</label>
+      <label><input type="radio" name="q1" value="2"> 2</label>
+      <label><input type="radio" name="q1" value="3"> 3</label>
+    </div>
+
+    <div class="question">
+      <h3>2. ¿Cuál es el límite de f(x) = x² cuando x → 4?</h3>
+      <label><input type="radio" name="q2" value="16"> 16</label>
+      <label><input type="radio" name="q2" value="8"> 8</label>
+      <label><input type="radio" name="q2" value="4"> 4</label>
+    </div>
+
+    <div class="question">
+      <h3>3. ¿Cuál es el límite de f(x) = 1/x cuando x → ∞?</h3>
+      <label><input type="radio" name="q3" value="0"> 0</label>
+      <label><input type="radio" name="q3" value="1"> 1</label>
+      <label><input type="radio" name="q3" value="∞"> ∞</label>
+    </div>
+
+    <div class="question">
+      <h3>4. ¿Cuál es el límite de f(x) = (x² - 9)/(x - 3) cuando x → 3?</h3>
+      <label><input type="radio" name="q4" value="6"> 6</label>
+      <label><input type="radio" name="q4" value="0"> 0</label>
+      <label><input type="radio" name="q4" value="Indefinido"> Indefinido</label>
+    </div>
+
+    <div class="question">
+      <h3>5. ¿Cuál es el límite de f(x) = sen(x)/x cuando x → 0?</h3>
+      <label><input type="radio" name="q5" value="1"> 1</label>
+      <label><input type="radio" name="q5" value="0"> 0</label>
+      <label><input type="radio" name="q5" value="Infinito"> Infinito</label>
+    </div>
+
+    <div class="question">
+      <h3>6. ¿Cuál es el límite de f(x) = (x+2)/(x+2) cuando x → -2?</h3>
+      <label><input type="radio" name="q6" value="Indefinido"> Indefinido</label>
+      <label><input type="radio" name="q6" value="1"> 1</label>
+      <label><input type="radio" name="q6" value="0"> 0</label>
+    </div>
+
+    <div class="question">
+      <h3>7. ¿Cuál es el límite de f(x) = √x cuando x → 9?</h3>
+      <label><input type="radio" name="q7" value="3"> 3</label>
+      <label><input type="radio" name="q7" value="9"> 9</label>
+      <label><input type="radio" name="q7" value="81"> 81</label>
+    </div>
+
+    <div class="question">
+      <h3>8. ¿Cuál es el límite de f(x) = (x² - 4)/(x - 2) cuando x → 2?</h3>
+      <label><input type="radio" name="q8" value="4"> 4</label>
+      <label><input type="radio" name="q8" value="0"> 0</label>
+      <label><input type="radio" name="q8" value="Indefinido"> Indefinido</label>
+    </div>
+
+    <div class="question">
+      <h3>9. ¿Cuál es el límite de f(x) = cos(x) cuando x → 0?</h3>
+      <label><input type="radio" name="q9" value="1"> 1</label>
+      <label><input type="radio" name="q9" value="0"> 0</label>
+      <label><input type="radio" name="q9" value="Infinito"> Infinito</label>
+    </div>
+
+    <div class="question">
+      <h3>10. ¿Cuál es el límite de f(x) = (3x² + 2x)/(x²) cuando x → ∞?</h3>
+      <label><input type="radio" name="q10" value="3"> 3</label>
+      <label><input type="radio" name="q10" value="2"> 2</label>
+      <label><input type="radio" name="q10" value="0"> 0</label>
+    </div>
+
+    <button type="button" id="submitBtn">Enviar Respuestas</button>
+  </form>
+
+ <script src="scriptmat4.js"></script>
+</body>
+</html>

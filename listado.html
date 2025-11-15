@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de Estudiantes</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #b3e5fc, #e1f5fe);
+      margin: 0;
+      padding: 40px;
+      color: #034f84;
+    }
+
+    h1 {
+      text-align: center;
+      color: #034f84;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .table-container {
+      background-color: #ffffff;
+      max-width: 800px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    th {
+      background-color: #81d4fa;
+      color: #034f84;
+      padding: 12px;
+      border-bottom: 2px solid #b3e5fc;
+    }
+
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #e0f7fa;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    tr:hover {
+      background-color: #e1f5fe;
+      cursor: pointer;
+      transform: scale(1.01);
+    }
+
+    .note {
+      text-align: center;
+      font-style: italic;
+      margin-top: 12px;
+      color: #555;
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0 auto;
+      padding: 10px 20px;
+      background-color: #81d4fa;
+      color: #034f84;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #4fc3f7;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📋 Listado de Estudiantes</h1>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ondblclick="abrirExamen('ana')"><td>1</td><td>Ana</td><td>Gómez</td></tr>
+        <tr ondblclick="abrirExamen('carlos')"><td>2</td><td>Carlos</td><td>Martínez</td></tr>
+        <tr ondblclick="abrirExamen('estudiante')"><td>3</td><td>Laura</td><td>Laverde</td></tr>
+        <tr ondblclick="abrirExamen('david')"><td>4</td><td>David</td><td>Suárez</td></tr>
+        <tr ondblclick="abrirExamen('maria')"><td>5</td><td>María</td><td>Álvarez</td></tr>
+        <tr ondblclick="abrirExamen('camila')"><td>6</td><td>Camila</td><td>Torres</td></tr>
+        <tr ondblclick="abrirExamen('santiago')"><td>7</td><td>Santiago</td><td>Vargas</td></tr>
+        <tr ondblclick="abrirExamen('valentina')"><td>8</td><td>Valentina</td><td>Ríos</td></tr>
+        <tr ondblclick="abrirExamen('andres')"><td>9</td><td>Andrés</td><td>Castro</td></tr>
+        <tr ondblclick="abrirExamen('daniela')"><td>10</td><td>Daniela</td><td>Ramírez</td></tr>
+        <tr ondblclick="abrirExamen('felipe')"><td>11</td><td>Felipe</td><td>García</td></tr>
+        <tr ondblclick="abrirExamen('lucia')"><td>12</td><td>Lucía</td><td>Moreno</td></tr>
+        <tr ondblclick="abrirExamen('mateo')"><td>13</td><td>Mateo</td><td>Navarro</td></tr>
+        <tr ondblclick="abrirExamen('sofia')"><td>14</td><td>Sofía</td><td>Jiménez</td></tr>
+        <tr ondblclick="abrirExamen('tomas')"><td>15</td><td>Tomás</td><td>Salazar</td></tr>
+        <tr ondblclick="abrirExamen('gabriela')"><td>16</td><td>Gabriela</td><td>Hernández</td></tr>
+        <tr ondblclick="abrirExamen('julio')"><td>17</td><td>Julio</td><td>Medina</td></tr>
+        <tr ondblclick="abrirExamen('isabella')"><td>18</td><td>Isabella</td><td>Reyes</td></tr>
+        <tr ondblclick="abrirExamen('samuel')"><td>19</td><td>Samuel</td><td>Pérez</td></tr>
+        <tr ondblclick="abrirExamen('elena')"><td>20</td><td>Elena</td><td>Ortiz</td></tr>
+      </tbody>
+    </table>
+
+    <p class="note">💡 Haz <strong>doble clic</strong> sobre un estudiante para ver sus exámenes.</p>
+
+    <a href="maestros.html" class="back-btn">⬅️ Volver a Maestro</a>
+  </div>
+
+ 
+<script src="scriptlistado.js"></script>
+</body>
+</html>

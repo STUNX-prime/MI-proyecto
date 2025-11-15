@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estudiantes</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* 💙 Estilo del botón para ir a "Mis Exámenes" */
+    .exam-button {
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0 auto;
+      padding: 12px 25px;
+      background-color: #a3d8ff;
+      color: #034f84;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    .exam-button:hover {
+      background-color: #81c8ff;
+    }
+
+    /* 🔹 Nombre del usuario */
+    .user-info {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background: #ffffffcc;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      color: #034f84;
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <div class="logo">TMQ</div>
+      <div class="logo-text">TEST MEAN QUIZZES</div>
+    </div>
+
+    <!-- 🔥 Aquí se muestra el nombre del estudiante -->
+    <div class="user-info" id="username-display"></div>
+  </header>
+
+  <main>
+    <section class="welcome-box">
+      <h2>Bienvenido Estudiante 📘</h2>
+      <p>Aquí podrás acceder a los quizzes de matemáticas, revisar tus calificaciones y mejorar tu rendimiento.</p>
+
+      <a href="examenes-est.html" class="exam-button">📄 Ver Mis Exámenes</a>
+      <a href="catalogo.html" class="exam-button">📄 Catálogo</a>
+    </section>
+  </main>
+
+  <!-- 🔥 Script para cargar nombre -->
+  <script>
+    const username = localStorage.getItem("username");
+
+    if (username) {
+      document.getElementById("username-display").textContent = "👤 " + username;
+    } else {
+      document.getElementById("username-display").textContent = "👤 Estudiante";
+    }
+  </script>
+
+</body>
+</html>

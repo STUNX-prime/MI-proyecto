@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resultados del Examen</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      padding: 30px;
+    }
+
+    .result-container {
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #034f84;
+      text-align: center;
+    }
+
+    .result-detail p {
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #d0ebff;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #034f84;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="result-container">
+    <h2>📊 Informe del Examen</h2>
+
+    <div id="contenido" class="result-detail">
+
+      <p><strong>Estudiante:</strong> <span id="estudiante"></span></p>
+      <p><strong>Examen:</strong> <span id="nombreExamen"></span></p>
+      <p><strong>Fecha:</strong> <span id="fecha"></span></p>
+      <p><strong>Calificación:</strong> <span id="nota"></span></p>
+      <p><strong>Preguntas Correctas:</strong> <span id="correctas"></span></p>
+      <p><strong>Preguntas Incorrectas:</strong> <span id="incorrectas"></span></p>
+
+      <a href="estudiantes.html" class="btn">⬅ Volver a Mis Exámenes</a>
+
+    </div>
+
+  </div>
+
+  <script src="scriptResultados.js"></script>
+</body>
+</html>
+

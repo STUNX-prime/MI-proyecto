@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exámenes Enviados</title>
+  <link rel="stylesheet" href="styles2.css" />
+  <style>
+    body {
+      background-color: #e6f0fa;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #a8cbed;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #03396c;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    .exam-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .exam-table th, .exam-table td {
+      border: 1px solid #d0e4f5;
+      padding: 15px;
+      text-align: left;
+    }
+
+    .exam-table th {
+      background-color: #d4e8f7;
+      color: #03396c;
+    }
+
+    .exam-table tr:nth-child(even) {
+      background-color: #f1f8ff;
+    }
+
+    .back-button {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #a8cbed;
+      color: #03396c;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .back-button:hover {
+      background-color: #93bde0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📚 Exámenes Enviados</h1>
+  </header>
+
+  <main>
+    <table class="exam-table">
+      <thead>
+        <tr>
+          <th>Título del Examen</th>
+          <th>Estudiante</th>
+          <th>Fecha de Envío</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Matemáticas Básicas</td>
+          <td>Ana Gómez</td>
+          <td>30/09/2025</td>
+          <td>Pendiente de calificación</td>
+        </tr>
+        <tr>
+          <td>Historia Universal</td>
+          <td>Luis Martínez</td>
+          <td>01/10/2025</td>
+          <td>Calificado</td>
+        </tr>
+    
+      </tbody>
+    </table>
+
+    <a class="back-button" href="profesores.html">⬅ Volver al Panel</a>
+  </main>
+
+</body>
+</html>

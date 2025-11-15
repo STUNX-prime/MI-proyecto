@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profesores</title>
+  <link rel="stylesheet" href="styles2.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="logo">TMQ</div>
+      <div class="logo-text">TEST MEAN QUIZZES</div>
+    </div>
+  </header>
+
+  <main>
+    
+
+    
+    <section class="teacher-panel">
+      <h3>📚 Panel del Profesor</h3>
+
+      
+     
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profesores</title>
+  <link rel="stylesheet" href="styles2.css" />
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f6f8; }
+    .card { background: white; border-radius: 8px; padding: 20px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .hidden { display: none; }
+    input, select, textarea, button { margin: 8px 0; padding: 8px; width: 100%; }
+    button { cursor: pointer; border: none; border-radius: 5px; background: #007bff; color: white; font-weight: bold; }
+    button:hover { background: #0056b3; }
+    .question { border: 1px solid #ccc; padding: 10px; margin-top: 10px; border-radius: 6px; }
+    label { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="logo">TMQ</div>
+      <div class="logo-text">TEST MEAN QUIZZES</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="welcome-box">
+      <h2>Bienvenido Profesor 👩‍🏫</h2>
+      <p>Aquí podrás subir quizzes, ver estadísticas de los estudiantes y administrar contenido.</p>
+    </section>
+
+    <section class="teacher-panel">
+      <h3>📚 Panel del Profesor</h3>
+
+      <!-- CARD PRINCIPAL -->
+      <div class="card">
+        <h4>➕ Agregar nuevo examen</h4>
+        <form id="examForm">
+          <input type="text" placeholder="Título del examen" name="titulo" required />
+          <input type="text" placeholder="Descripción o instrucciones" name="instrucciones" required />
+          <button type="button" id="createExamBtn">Subir Examen</button>
+        </form>
+      </div>
+
+      <!-- FORMULARIO INTERACTIVO PARA CREAR EXAMEN -->
+      <div id="examBuilder" class="card hidden">
+        <h3>🧠 Crear examen</h3>
+        <div id="questionsContainer"></div>
+
+        <button type="button" id="addQuestionBtn">➕ Añadir pregunta</button>
+        <button type="button" id="saveExamBtn">💾 Guardar examen</button>
+        <button type="button" id="sendExamBtn">📤 Enviar examen</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const createExamBtn = document.getElementById('createExamBtn');
+    const examBuilder = document.getElementById('examBuilder');
+    const addQuestionBtn = document.getElementById('addQuestionBtn');
+    const questionsContainer = document.getElementById('questionsContainer');
+    let questionCount = 0;
+
+    // Mostrar formulario para crear examen
+    createExamBtn.addEventListener('click', () => {
+      examBuilder.classList.remove('hidden');
+    });
+
+    // Función para crear una nueva pregunta
+    function addQuestion() {
+      questionCount++;
+      const questionDiv = document.createElement('div');
+      questionDiv.classList.add('question');
+      questionDiv.innerHTML = `
+        <h4>Pregunta ${questionCount}</h4>
+        <label>Tipo de pregunta:</label>
+        <select class="questionType">
+          <option value="multiple">Opción múltiple (A, B, C, D)</option>
+          <option value="abierta">Pregunta abierta</option>
+        </select>
+        
+        <label>Enunciado:</label>
+        <input type="text" class="questionText" placeholder="Escribe la pregunta" required />
+
+        <div class="multipleOptions">
+          <label>Opciones:</label>
+          <input type="text" placeholder="Opción A" class="optionA" />
+          <input type="text" placeholder="Opción B" class="optionB" />
+          <input type="text" placeholder="Opción C" class="optionC" />
+          <input type="text" placeholder="Opción D" class="optionD" />
+          <label>Respuesta correcta:</label>
+          <select class="correctOption">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+        </div>
+
+        <div class="openQuestion hidden">
+          <label>Respuesta esperada (opcional):</label>
+          <textarea class="expectedAnswer" placeholder="Describe la respuesta correcta"></textarea>
+        </div>
+      `;
+
+      // Detectar tipo de pregunta
+      const questionType = questionDiv.querySelector('.questionType');
+      const multipleOptions = questionDiv.querySelector('.multipleOptions');
+      const openQuestion = questionDiv.querySelector('.openQuestion');
+
+      questionType.addEventListener('change', () => {
+        if (questionType.value === 'abierta') {
+          multipleOptions.classList.add('hidden');
+          openQuestion.classList.remove('hidden');
+        } else {
+          multipleOptions.classList.remove('hidden');
+          openQuestion.classList.add('hidden');
+        }
+      });
+
+      questionsContainer.appendChild(questionDiv);
+    }
+
+    addQuestionBtn.addEventListener('click', addQuestion);
+
+    // Botones de guardar y enviar
+    document.getElementById('saveExamBtn').addEventListener('click', () => {
+      alert('✅ Examen guardado temporalmente (solo en memoria).');
+    });
+
+    document.getElementById('sendExamBtn').addEventListener('click', () => {
+      alert('📤 Examen enviado correctamente.');
+      examBuilder.classList.add('hidden');
+      questionsContainer.innerHTML = "";
+      questionCount = 0;
+    });
+  </script>
+</body>
+</html>
+
+
+
+      
+       <div class="card">
+  <h4>🔍 Revisar exámenes enviados</h4>
+  <form action="ver-examenes.html" method="get">
+    <button type="submit">Ver Exámenes</button>
+  </form>
+</div>
+
+
+
+      
+      <div class="card">
+  <h4>📊 Resultados de los estudiantes</h4>
+  <div class="student-results">
+   <button type="submit">Ver resultados</button>
+  </div>
+</div>
+
+
+      
+      <div class="card">
+        <h4>📝 Calificar estudiante</h4>
+        <form id="gradeForm">
+          <label>Nombre del estudiante:</label>
+          <input type="text" placeholder="Ej. Ana Gómez" required />
+          <label>Nota (1 a 5):</label>
+          <input type="number" min="1" max="5" required />
+          <button type="submit">Enviar Calificación</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

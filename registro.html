@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro de Usuario</title>
+
+  <style>
+    body {
+      background-image: url('fondo3.jpeg'); 
+      background-size: cover;            
+      background-position: center;       
+      background-repeat: no-repeat;      
+      height: 100vh;                    
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .welcome-box {
+      max-width: 400px;
+      margin: 120px auto;
+      background-color: #ffffff;
+      padding: 50px;
+      border-radius: 100px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #39b7e9;
+      margin-bottom: 20px;
+    }
+
+    form input, form select {
+      padding: 10px;
+      width: 80%;
+      border: 1px solid #b3c9ff;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    form select {
+      background-color: #f9f9f9;
+      cursor: pointer;
+    }
+
+    form select:focus {
+      border-color: #6da3f5;
+      outline: none;
+    }
+
+    form button {
+      background-color: #6da3f5;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #4b89e3;
+    }
+
+    p {
+      font-size: 14px;
+      color: #0e0d0d;
+      margin-top: 15px;
+    }
+
+    a {
+      color: #6da3f5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    #mensajeRegistro {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="welcome-box">
+    <h2>Registro de Usuario</h2>
+
+    <form id="registroForm">
+      <input type="text" name="nombre" placeholder="Nombre completo" required /><br>
+      <input type="email" name="email" placeholder="Correo electrónico" required /><br>
+      <input type="password" name="password" placeholder="Contraseña" required /><br>
+
+      <select name="rol" required>
+        <option value="" disabled selected>Selecciona tu rol</option>
+        <option value="estudiante">Estudiante</option>
+        <option value="maestro">Maestro</option>
+      </select><br>
+
+      <button type="submit">Registrarse</button>
+    </form>
+
+    <p>¿Ya estás registrado? <a href="login.html">Inicia sesión aquí</a></p>
+
+    <p id="mensajeRegistro"></p>
+  </section>
+
+  <script>
+    const form = document.getElementById("registroForm");
+    const mensajeRegistro = document.getElementById("mensajeRegistro");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      mensajeRegistro.textContent = "";
+
+      const data = {
+        nombre: form.nombre.value,
+        email: form.email.value,
+        password: form.password.value,
+        rol: form.rol.value
+      };
+
+      try {
+        const res = await fetch("http://localhost:5000/api/auth/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        if(res.ok){
+          mensajeRegistro.style.color = "green";
+          mensajeRegistro.textContent = result.message;
+          setTimeout(() => {
+            window.location.href = "login.html";
+          }, 1000);
+        } else {
+          mensajeRegistro.style.color = "red";
+          mensajeRegistro.textContent = result.message;
+        }
+
+      } catch(err) {
+        mensajeRegistro.style.color = "red";
+        mensajeRegistro.textContent = "Error de conexión con el servidor";
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
